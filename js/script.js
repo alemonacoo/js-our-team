@@ -14,13 +14,18 @@ console.log(teamMembersArray);
 
 const teamContainer = document.getElementById("team-members-container");
 
+
 for(i=0; i < teamMembersArray.length; i++){
     console.log('name = ' + teamMembersArray[i].name, 'role = ' + teamMembersArray[i].role, 'picture = ' + teamMembersArray[i].picture);
-    teamContainer.innerHTML += `<h2> ${teamMembersArray[i].role}</h2>
-                                <p> ${teamMembersArray[i].role}</p>
-                                <p> ${teamMembersArray[i].picture} = pic path</p>
-                                `
+    let card = document.createElement("div");
+    card.classList.add("card");
+    teamContainer.append(card);
+    card.innerHTML += ` <h2> ${teamMembersArray[i].name}</h2>
+                        <p> ${teamMembersArray[i].role}</p>
+                        <img src="img/${teamMembersArray[i].picture}" alt="">
+    `
 }
+
 
 
 
